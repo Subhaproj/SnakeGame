@@ -1,17 +1,17 @@
 body {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    background-color: #04d6b0;
-  }
-  
-  h1 {
-    color: #226d51;
-  }
-  
-  canvas {
-    border: 2px solid #fffefe;
-    background-color: #ad08ad;
-    margin: 40px auto;
-    display: block;
-  }
+    background-image: url('background.jpg'); /* Path to background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    border: 4px solid black;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
   

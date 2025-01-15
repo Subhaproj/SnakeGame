@@ -15,10 +15,10 @@ let gameOverFlag = false;
 
 // Load the snake and food images
 const snakeImg = new Image();
-snakeImg.src = 'snake.png';
+snakeImg.src = 'snake.png';  // Path to snake image
 
 const foodImg = new Image();
-foodImg.src = 'food.gif'; // Use a GIF for food
+foodImg.src = 'food.gif';  // Use a GIF for food
 
 // Load sound effects
 const eatSound = new Audio('eat.wav');
@@ -100,7 +100,7 @@ function drawGame() {
 
   // Check for collisions with boundaries and itself
   if (
-    head.x < 0 || head.y < 0 || head.x >= canvasSize || head.y >= canvasSize ||
+    head.x < 0 || head.y < reservedTop || head.x >= canvasSize || head.y >= canvasSize ||
     snake.some(segment => segment.x === head.x && segment.y === head.y)
   ) {
     gameOver();
@@ -112,10 +112,10 @@ function drawGame() {
   // Display the score
   ctx.fillStyle = 'black';
   ctx.font = '20px Arial';
-  ctx.fillText(`Score: ${score}`, 10, 20);
+  ctx.fillText(`Score: ${score}`, 10, reservedTop - 10);
 
   // Display the high score on the top-right corner
-  ctx.fillText(`High Score: ${highScore}`, canvasSize - 180, 20);
+  ctx.fillText(`High Score: ${highScore}`, canvasSize - 180, reservedTop - 10);
 }
 
 // Generate random food position, avoiding the top area for score
